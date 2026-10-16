@@ -16,7 +16,7 @@ node -e '
   const fs=require("fs"),p="apps/web/.next/server/app/api/x/route.js.nft.json";
   const f=JSON.parse(fs.readFileSync(p)).files;
   const pk=new Set(f.map(x=>x.split("node_modules/").pop().split("/")[0]));
-  console.log(f.length,"files;","dayjs" in Object.fromEntries([...pk].map(k=>[k,1])),"zod:",pk.has("zod"),"typescript:",pk.has("typescript"))'
+  console.log(f.length,"files; dayjs:",pk.has("dayjs"),"zod:",pk.has("zod"),"typescript:",pk.has("typescript"))'
 ```
 
 Switch the `next` version in `apps/web/package.json` and rerun `pnpm install` to compare.
